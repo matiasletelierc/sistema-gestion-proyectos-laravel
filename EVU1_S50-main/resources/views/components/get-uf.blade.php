@@ -1,0 +1,3 @@
+<div id="uf" class="text-center py-2">
+    Obteniendo la UF del día...
+</div>
