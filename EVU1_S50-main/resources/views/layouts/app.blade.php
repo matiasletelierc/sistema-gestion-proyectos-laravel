@@ -41,16 +41,23 @@
         }
         
         .glassmorphism-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            filter: brightness(1.2) contrast(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .glassmorphism-text {
             color: white;
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .glassmorphism-menu {
@@ -132,20 +139,24 @@
         <div class="glassmorphism-container">
             <div class="glassmorphism-content">
                 <div class="glassmorphism-brand">
-                    <img class="glassmorphism-logo" src="{{ asset('assets/img/Tech-solutions-Logo-23.png') }}" alt="Logo">
-                    <span class="glassmorphism-text">Tech Solutions</span>
+                    <img class="glassmorphism-logo" 
+                         src="{{ asset('assets/img/Tech-solutions-Logo-23.png') }}" 
+                         alt="Tech Solutions Logo"
+                         onerror="console.log('Error cargando logo:', this.src); this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="glassmorphism-logo-fallback" style="display: none; width: 45px; height: 45px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">TS</div>
+                    <span class="glassmorphism-text">Gestión de Proyectos</span>
                 </div>
                 
                 <div class="glassmorphism-menu" id="navMenu">
-                    <a href="#" class="glassmorphism-link">
+                    <a href="{{ route('projects.index') }}" class="glassmorphism-link">
                         <span class="glassmorphism-icon">📋</span>
                         <span>Lista de Proyectos</span>
                     </a>
-                    <a href="#" class="glassmorphism-link">
+                    <a href="{{ route('projects.create') }}" class="glassmorphism-link">
                         <span class="glassmorphism-icon">➕</span>
                         <span>Crear Proyecto</span>
                     </a>
-                    <a href="#" class="glassmorphism-link">
+                    <a href="/uf" class="glassmorphism-link">
                         <span class="glassmorphism-icon">💰</span>
                         <span>Valor UF</span>
                     </a>
